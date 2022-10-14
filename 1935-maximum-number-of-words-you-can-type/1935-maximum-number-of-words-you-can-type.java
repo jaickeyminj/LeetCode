@@ -33,13 +33,11 @@ class Solution {
         for (char ch:text.toCharArray()){
             if (ch==' '){
                 if (flag){
-                    res++;
-                } else {
-                    flag=true;
-                }
-                continue;
+                    res+=1;
+                } 
+                flag=true;
             }
-            if(map[(ch)-'a']==1){
+            else if(map[(ch)-'a']==1){
                 flag=false;
             }
         }
