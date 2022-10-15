@@ -9,11 +9,12 @@ class Solution {
                          b.getKey() - a.getKey() : a.getValue() - b.getValue());
         int index = 0;
         int[] res = new int[nums.length];
-        
+        int count=0;
+        int key=0;
         for (Map.Entry<Integer, Integer> entry : list) {
             
-            int count = entry.getValue();
-            int key = entry.getKey();
+            count = entry.getValue();
+            key = entry.getKey();
             
             for (int i=0; i<count; i+=1) {
                 res[index] = key;
