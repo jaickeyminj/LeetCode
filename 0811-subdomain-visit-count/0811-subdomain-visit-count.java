@@ -17,8 +17,8 @@ class Solution {
         }
         // System.out.println(hm);
         List<String> ans = new ArrayList<>();
-        for(Map.Entry<String,Integer> entry: hm.entrySet()){
-            ans.add(entry.getValue()+" "+entry.getKey());
+        for(String entry: hm.keySet()){
+            ans.add(hm.get(entry)+" "+entry);
         }
         return ans;
     }
