@@ -16,11 +16,8 @@ class Solution {
             }
         }
         List<String> ans = new ArrayList<>();
-        // StringBuilder sb = null;
-        for(String d: hm.keySet()){
-            StringBuilder sb = new StringBuilder();
-            sb.append(hm.get(d)).append(" ").append(d);
-            ans.add(sb.toString());
+        for(String entry: hm.keySet()){
+            ans.add(hm.get(entry)+" "+entry);
         }
         return ans;
     }
