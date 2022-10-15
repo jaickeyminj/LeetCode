@@ -17,8 +17,11 @@ class Solution {
         }
         // System.out.println(hm);
         List<String> ans = new ArrayList<>();
-        for(String entry: hm.keySet()){
-            ans.add(hm.get(entry)+" "+entry);
+        StringBuilder sb = null;
+        for(String d: hm.keySet()){
+            sb = new StringBuilder();
+            sb.append(hm.get(d)).append(" ").append(d);
+            ans.add(sb.toString());
         }
         return ans;
     }
