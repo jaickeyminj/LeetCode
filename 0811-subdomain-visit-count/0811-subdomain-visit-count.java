@@ -18,6 +18,6 @@ class Solution {
         for(Map.Entry<String,Integer> entry: hm.entrySet()){
             ans.add(entry.getValue()+" "+entry.getKey());
         }
-        return new ArrayList<String>(ans);
+        return ans;
     }
 }
