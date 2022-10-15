@@ -8,10 +8,9 @@ class Solution {
             String a=Arrays.toString(row);
             hm.put(a, hm.getOrDefault(a, 0) + 1);
         }
-        
-        for (int c = 0; c < n; ++c) {
-            int[] col = new int[n];
-            for (int r = 0; r < n; ++r) {
+        int[] col = new int[n];
+        for (int c = 0; c < n; c+=1) {
+            for (int r = 0; r < n; r+=1) {
                 col[r] = grid[r][c];
             }
             res += hm.getOrDefault(Arrays.toString(col), 0);
