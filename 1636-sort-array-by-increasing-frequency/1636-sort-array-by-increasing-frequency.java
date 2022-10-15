@@ -15,8 +15,9 @@ class Solution {
             int count = entry.getValue();
             int key = entry.getKey();
             
-            for (int i=0; i<count; i++) {
-                res[index++] = key;
+            for (int i=0; i<count; i+=1) {
+                res[index] = key;
+                index+=1;
             }
         }
         return res;
