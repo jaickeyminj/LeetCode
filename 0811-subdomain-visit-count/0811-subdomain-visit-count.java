@@ -15,11 +15,10 @@ class Solution {
                 }
             }
         }
-        // System.out.println(hm);
         List<String> ans = new ArrayList<>();
-        StringBuilder sb = null;
+        // StringBuilder sb = null;
         for(String d: hm.keySet()){
-            sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.append(hm.get(d)).append(" ").append(d);
             ans.add(sb.toString());
         }
