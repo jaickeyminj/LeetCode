@@ -4,7 +4,7 @@ class Solution {
         int upper[] = new int[26];
         
         for(char c: s.toCharArray()){
-            if(Character.isLowerCase(c)){
+            if((c)>=97){
                 lower[c-'a']=1;
             }
             else{
