@@ -2,22 +2,17 @@ class Solution {
     public boolean checkDistances(String s, int[] distance) {
         int map[]= new int[26];
         boolean flag[]= new boolean[26];
+        int c=97;
         for(int i=0;i<s.length();i++){
-            if(!flag[s.charAt(i)-'a']){
-                map[s.charAt(i)-'a']=i+1;
-                flag[s.charAt(i)-'a']=true;
+            c= s.charAt(i)-'a';
+            if(!flag[c]){
+                map[c]=i+1;
+                flag[c]=true;
             }
-            else if(i-map[s.charAt(i)-'a'] != distance[s.charAt(i)-'a']){
-                // map[s.charAt(i)-'a'] = i- map[s.charAt(i)-'a']-1;
+            else if(i-map[c] != distance[c]){
                 return false;
-            }
-                
+            }        
         }
-        // System.out.println(Arrays.toString(map));
-        // for(int i=0;i<26;i++){
-        //     if(map[i]!=0 && (map[i]!=distance[i]))
-        //         return false;
-        // }
         return true;
     }
     
