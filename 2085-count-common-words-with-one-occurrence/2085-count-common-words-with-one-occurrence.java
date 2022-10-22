@@ -11,7 +11,7 @@ class Solution {
         }
         int count =0;
         for(String a: hm.keySet()){
-            if(hm2.containsKey(a)&& hm2.get(a)==1 && hm.get(a)==1){
+            if(hm2.getOrDefault(a,0)==1 && hm.get(a)==1){
                 count+=1;
             }
         }
