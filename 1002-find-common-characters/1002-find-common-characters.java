@@ -7,11 +7,11 @@ class Solution {
         List<String> arr = new ArrayList<>();
         for (int i = 0; i < 26; i++) {
             if (last[i] != 0) {
-                char a = 'a';
-                a += i;
-                String s = String.valueOf(a);
+                // char a = 'a';
+                // a += i;
+                // String s = String.valueOf(a);
                 while (last[i] > 0) {
-                    arr.add(s);
+                    arr.add(String.valueOf((char)('a'+i)));
                     last[i]--;
                 }
             }
