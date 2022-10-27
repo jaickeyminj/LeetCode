@@ -2,9 +2,11 @@ class Solution {
     public String reversePrefix(String word, char ch) {
         StringBuilder sb = new StringBuilder();
         int i=0;
+        char c='a';
         for(;i<word.length();i+=1){
-            sb.append(word.charAt(i));
-            if(ch==word.charAt(i)){
+            c= word.charAt(i);
+            sb.append(c);
+            if(ch==c){
                 break;
             }
         }
