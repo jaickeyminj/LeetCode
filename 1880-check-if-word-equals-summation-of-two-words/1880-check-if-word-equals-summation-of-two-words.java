@@ -13,9 +13,7 @@ class Solution {
         for(char c: targetWord.toCharArray()){
             cc.append((c-97)+"");
         }
-        // System.out.println(a.toString());
-        // System.out.println(b.toString());
-        // System.out.println(cc.toString());
-        return Integer.parseInt(a.toString())+ Integer.parseInt(b.toString()) == Integer.parseInt(cc.toString());
+        return Integer.parseInt(a.toString())+Integer.parseInt(b.toString()) 
+            == Integer.parseInt(cc.toString());
     }
 }
