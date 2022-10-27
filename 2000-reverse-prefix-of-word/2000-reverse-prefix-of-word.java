@@ -10,6 +10,6 @@ class Solution {
         }
         if(i!=word.length())
             return sb.reverse().toString() + word.substring(i+1);
-        return sb.toString() + word.substring(i);
+        return sb.toString();
     }
 }
