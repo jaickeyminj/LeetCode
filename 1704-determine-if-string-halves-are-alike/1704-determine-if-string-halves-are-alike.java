@@ -3,7 +3,6 @@ class Solution {
         int len = s.length();
         String a = s.substring(0,len/2);
         String b = s.substring(len/2);
-        // System.out.println(a+" -> "+b);
         int count1 = 0;
         int count2 = 0;
         
