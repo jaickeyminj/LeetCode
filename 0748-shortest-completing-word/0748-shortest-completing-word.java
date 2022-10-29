@@ -9,16 +9,14 @@ class Solution {
             map[c-'a']+=1;
         }
         Arrays.sort(words, Comparator.comparing(s->s.length()));
-        String a="";
         for(String word:words){
             if(word.length()>=licensePlate.length()){
                 if(processAlpha(word,map)){
-                    a=word;
                     return word;
                 }
             }
         }
-        return a;
+        return licensePlate;
     }
     public boolean processAlpha(String word, int map[]){
         int map2[] = new int[26];
