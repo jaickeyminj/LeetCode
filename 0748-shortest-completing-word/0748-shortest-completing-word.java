@@ -2,8 +2,6 @@ class Solution {
     public String shortestCompletingWord(String licensePlate, String[] words) {
         
         licensePlate = licensePlate.replaceAll("\\s+","").replaceAll("([0-9])","").replaceAll("([A-Z])", "$1").toLowerCase();
-        // licensePlate = licensePlate.replaceAll("([0-9])","");
-        // licensePlate = licensePlate.replaceAll("([A-Z])", "$1").toLowerCase();
         int map[] = new int[26];
         for(char c: licensePlate.toCharArray()){
             map[c-'a']+=1;
