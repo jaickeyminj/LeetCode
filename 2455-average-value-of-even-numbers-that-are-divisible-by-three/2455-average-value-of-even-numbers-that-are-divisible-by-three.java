@@ -8,7 +8,7 @@ class Solution {
                 count+=1;
             }
         }
-        if(count!=0)
+        if(count>0)
             return sum/count;
         return 0;
     }
