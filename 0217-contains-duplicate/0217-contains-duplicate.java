@@ -15,6 +15,6 @@ class Solution {
     //     return false;
     // }
     public boolean containsDuplicate(int[] nums) {
-        return nums.length != Arrays.stream(nums).distinct().count();
+        return nums.length != Arrays.stream(nums).parallel().distinct().count();
     }
 }
