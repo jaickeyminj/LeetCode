@@ -7,10 +7,16 @@ class Solution {
         //     if(nums[i]==nums[i+1]) return true;
         // }
         // return false;
+        // Set<Integer> set = new TreeSet<>();
+        // for(int i: nums){
+        //     if(set.contains(i)) return true;
+        //     set.add(i);
+        // }
+        // return false;
         Set<Integer> set = new TreeSet<>();
         for(int i: nums){
-            if(set.contains(i)) return true;
-            set.add(i);
+            if(!set.add(i)) return true;
+            // set.add(i);
         }
         return false;
     }
