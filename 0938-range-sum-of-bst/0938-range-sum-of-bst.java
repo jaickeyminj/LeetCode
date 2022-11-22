@@ -14,20 +14,11 @@
  * }
  */
 class Solution {
-    int sum=0;
     public int rangeSumBST(TreeNode root, int low, int high) {
-        sum=0;
-        inorder(root,low,high);
-        return sum;
-    }
-    
-    private void inorder(TreeNode root,int low,int high){
-        if(root==null) return;
-        inorder(root.left,low,high);
-        if(root.val>=low && root.val<=high){
-            sum+=root.val;
-            // System.out.println(root.val);
-        }
-        inorder(root.right,low,high);
+        if(root==null) return 0;
+        if(root.val<low) return rangeSumBST(root.right,low,high);
+        if(root.val>high) return rangeSumBST(root.left,low,high);
+        
+        return root.val + rangeSumBST(root.right,low,high) + rangeSumBST(root.left,low,high);
     }
 }
