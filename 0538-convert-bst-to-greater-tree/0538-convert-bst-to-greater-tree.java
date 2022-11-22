@@ -14,23 +14,17 @@
  * }
  */
 class Solution {
-    // boolean flag = true;
     int sum=0;
     public TreeNode convertBST(TreeNode root) {
-        // TreeNode ans = TreeNode();
-        my(root);
+        myTraversal(root);
         return root;
     }
     
-    private void my(TreeNode root){
+    private void myTraversal(TreeNode root){
         if(root==null) return;
-        my(root.right);
-        // if(flag){
-        //     // sum=root.val;
-        //     flag=!flag;
-        // }
+        myTraversal(root.right);
         root.val+=sum;
         sum=root.val;
-        my(root.left);
+        myTraversal(root.left);
     }
 }
