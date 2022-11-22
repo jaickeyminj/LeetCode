@@ -1,7 +1,10 @@
 class Solution {
     public int[] sortByBits(int[] arr) {
+        // for(int i=0; i<arr.length;i+=1){
+        //     arr[i] += countSetBits(arr[i]) * 10001;
+        // }
         for(int i=0; i<arr.length;i+=1){
-            arr[i] += countSetBits(arr[i]) * 10001;
+            arr[i] += Integer.bitCount(arr[i]) * 10001;
         }
         // System.out.println(Arrays.toString(arr));
         Arrays.sort(arr);
