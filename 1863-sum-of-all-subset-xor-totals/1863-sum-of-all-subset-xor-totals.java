@@ -11,7 +11,6 @@ class Solution {
     //     return x + b;
     // }
     public int subsetXORSum(int[] nums) {
-        // return genSubsets(0,0,nums.length,nums);
         int ans =0;
         int n = nums.length;
         for(int i=0;i<(1<<n);i+=1){
