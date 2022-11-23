@@ -7,10 +7,13 @@ class Solution {
         int a =0;
         int b =0;
         int bit =0;
-        for(int i=0;i<32;i+=1){
-            if((x&(1<<i))!=0){
-                bit =i;
+        while(x!=0){
+            if((x&(1))!=0){
+                break;
+                // break;
             }
+            bit+=1;
+            x= x>>1;
         }
         for(int i:nums){
             if((i&(1<<bit))!=0){
