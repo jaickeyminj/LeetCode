@@ -10,7 +10,6 @@ class Solution {
         for(int i=0;i<32;i+=1){
             if((x&(1<<i))!=0){
                 bit =i;
-                // break;
             }
         }
         for(int i:nums){
