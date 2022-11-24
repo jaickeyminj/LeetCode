@@ -35,7 +35,7 @@ class Solution {
     
     private TreeNode makeBST(int i,int j){
         if(i>j) return null;
-        int mid = i + (j-i)/2;
+        int mid = (j-i)/2 + i;
         TreeNode node = new TreeNode();
         node.left = makeBST(i,mid-1);
         node.val = curr.val;
