@@ -17,7 +17,7 @@ class Solution {
         long ans = 0, set = skill[l] + skill[r];
         while ( l < r ){
             if (set != (skill[l] + skill[r]) ) return -1;
-            ans += skill[l] * skill[r];
+            ans += (skill[l] * skill[r]);
             l+=1; 
             r-=1;
         }
