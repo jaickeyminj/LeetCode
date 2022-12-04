@@ -16,8 +16,7 @@ class Solution {
         int l = 0, r = skill.length - 1;
         long ans = 0, set = skill[l] + skill[r];
         while ( l < r ){
-            long diff = skill[l] + skill[r];
-            if ( set != diff ) return -1;
+            if (set != (skill[l] + skill[r]) ) return -1;
             ans += skill[l] * skill[r];
             l+=1; 
             r-=1;
