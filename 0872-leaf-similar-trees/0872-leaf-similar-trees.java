@@ -41,9 +41,9 @@ class Solution {
     public int dfs(Stack<TreeNode> s) {
         while (true) {
             TreeNode node = s.pop();
+            if (node.left == null && node.right == null) return node.val;
             if (node.right != null) s.push(node.right);
             if (node.left != null) s.push(node.left);
-            if (node.left == null && node.right == null) return node.val;
         }
     }
 }
