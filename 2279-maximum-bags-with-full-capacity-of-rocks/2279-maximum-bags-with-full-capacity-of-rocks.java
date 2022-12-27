@@ -16,18 +16,33 @@ class Solution {
     //     }
     //     return cnt;
     // }
+    // public int maximumBags(int[] capacity, int[] rocks, int additionalRocks) {
+    //     List<Integer> list = new ArrayList<>();
+    //     for(int i=0; i<rocks.length; i++){
+    //         list.add(capacity[i]-rocks[i]);
+    //     }
+    //     Collections.sort(list);
+    //     int ans=0,count=0;
+    //     for(int a:list){
+    //         count += a;
+    //         if(count > additionalRocks) break;
+    //         ans++;
+    //     }
+    //     return ans;
+    // }
     public int maximumBags(int[] capacity, int[] rocks, int additionalRocks) {
-        List<Integer> list = new ArrayList<>();
-        for(int i=0; i<rocks.length; i++){
-            list.add(capacity[i]-rocks[i]);
+        final int n = rocks.length;
+        int cnt =0;
+        int[] remainingCapacity = new int[n];
+        for (int i = 0; i < n; ++i)
+            remainingCapacity[i] = capacity[i] - rocks[i];
+        Arrays.sort(remainingCapacity);
+        int a=0;
+        for(int i:remainingCapacity) {
+            a+=i;
+            if(a>additionalRocks) break;
+            cnt+=1;
         }
-        Collections.sort(list);
-        int ans=0,count=0;
-        for(int a:list){
-            count += a;
-            if(count > additionalRocks) break;
-            ans++;
-        }
-        return ans;
+        return cnt;
     }
 }
