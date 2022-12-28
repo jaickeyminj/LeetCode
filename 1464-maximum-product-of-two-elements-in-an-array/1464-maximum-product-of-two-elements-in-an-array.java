@@ -4,8 +4,12 @@ class Solution {
         for(int i:nums){
             pq.offer(i);
         }
-        int a = pq.poll();
-        int b = pq.poll();
-        return (a-1)*(b-1);
+        int i=2;
+        int res =1;
+        while(i>0){
+            res*= pq.poll()-1;
+            i-=1;
+        }
+        return res;
     }
 }
