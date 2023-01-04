@@ -12,7 +12,7 @@ class Solution {
                 
             }
         }
-        System.out.println(Arrays.deepToString(x));
+        // System.out.println(Arrays.deepToString(x));
         for(int i=1;i<row-1;i+=1){
             for(int j=0;j<cols-1;j+=1){
             if(x[i][j]==x[i+1][j] && x[i-1][j]!=x[i][j])
