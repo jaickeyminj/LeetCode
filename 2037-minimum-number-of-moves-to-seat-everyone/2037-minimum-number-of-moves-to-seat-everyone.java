@@ -5,11 +5,7 @@ class Solution {
         int count =0;
         int n = seats.length;
         for(int i=0;i<n;i+=1){
-            if(seats[i]==students[i])
-                continue;
-            else{
-                count += Math.abs(students[i]-seats[i]);
-            }
+            count+= Math.abs(seats[i]-students[i]);
         }
         return count;
     }
