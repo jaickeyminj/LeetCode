@@ -13,14 +13,20 @@ class Solution {
         i=1;
         while(!pq.isEmpty()){
             int index = map.get(pq.poll());
-            if(i==1)
-                res[index-1]="Gold Medal";
-            else if(i==2)
-                res[index-1]="Silver Medal";
-            else if(i==3)
-                res[index-1]="Bronze Medal";
-            else
-                res[index-1]=Integer.toString(i);
+            switch(i){
+                case 1:
+                    res[index-1]="Gold Medal"; 
+                    break;
+                case 2:
+                    res[index-1]="Silver Medal";
+                    break;
+                case 3:
+                    res[index-1]="Bronze Medal";
+                    break;
+                default:
+                    res[index-1]=Integer.toString(i);
+                    break;
+            }
             i+=1;
         }
         return res;
