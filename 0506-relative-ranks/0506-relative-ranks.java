@@ -12,8 +12,7 @@ class Solution {
         String res[]= new String[i-1];
         i=1;
         while(!pq.isEmpty()){
-            int element = pq.poll();
-            int index = map.get(element);
+            int index = map.get(pq.poll());
             if(i==1)
                 res[index-1]="Gold Medal";
             else if(i==2)
