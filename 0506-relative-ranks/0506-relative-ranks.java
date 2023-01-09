@@ -15,13 +15,13 @@ class Solution {
             int index = map.get(pq.poll());
             switch(i){
                 case 1:
-                    res[index]="Gold Medal"; 
+                    res[index]=new StringBuilder().append("Gold Medal").toString(); 
                     break;
                 case 2:
-                    res[index]="Silver Medal";
+                    res[index]=new StringBuilder().append("Silver Medal").toString();
                     break;
                 case 3:
-                    res[index]="Bronze Medal";
+                    res[index]=new StringBuilder().append("Bronze Medal").toString();
                     break;
                 default:
                     res[index]=Integer.toString(i);
