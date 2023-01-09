@@ -9,8 +9,9 @@ class Solution {
             pq.offer(new Integer[]{abc[0],abc[1]});
         }
         int[][] ans = new int[k][2];
+        Integer a[];
         for(int i=0;!pq.isEmpty()&&k>0;k-=1,i+=1){
-            Integer a[]=pq.poll();
+            a=pq.poll();
             ans[i][0]=a[0];
             ans[i][1]=a[1];
         }
