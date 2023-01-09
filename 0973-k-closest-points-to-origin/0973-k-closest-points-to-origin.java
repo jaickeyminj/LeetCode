@@ -10,7 +10,7 @@ class Solution {
         }
         int[][] ans = new int[k][2];
         Integer a[];
-        for(int i=0;!pq.isEmpty()&&k>0;k-=1,i+=1){
+        for(int i=0;k>0;k-=1,i+=1){
             a=pq.poll();
             ans[i][0]=a[0];
             ans[i][1]=a[1];
