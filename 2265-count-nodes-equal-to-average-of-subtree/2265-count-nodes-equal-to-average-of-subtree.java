@@ -22,9 +22,10 @@ class Solution {
             TreeNode temp = ad.poll();
             List<Integer> al = new ArrayList<>();
             find(temp,al);
-            long sum = 0;
-            for(Integer i: al)
-                sum+=i;
+            // long sum = 0;
+            // for(Integer i: al)
+            //     sum+=i;
+            long sum = al.get(al.size()-1);
             int avg =(int) sum/al.size();
             if(avg==temp.val)
                 cnt+=1;
@@ -38,7 +39,10 @@ class Solution {
     
     private void find(TreeNode root,List<Integer> al){
         if(root!=null){
-            al.add(root.val);
+            if(al.size()>0)
+                al.add(root.val+ al.get(al.size()-1));
+            else
+                al.add(root.val);
             find(root.left,al);
             find(root.right,al);
         }
