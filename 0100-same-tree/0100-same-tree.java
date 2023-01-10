@@ -20,7 +20,8 @@ class Solution {
         helper(p,a);
         helper(q,b);
         // System.out.println(a+"\n"+b);
-        return a.toString().contentEquals(b.toString());
+        // return a.toString().contentEquals(b.toString());
+        return a.equals(b);
     }
     
     public void helper(TreeNode p,List<Integer> a){
