@@ -1,13 +1,13 @@
 class Solution {
     public int[] sortArray(int[] nums) {
         PriorityQueue<Integer> pq = new PriorityQueue<>();
-        int i=0;
+        int i=-1;
         for(int j:nums){
             pq.offer(j);
         }
         
         for(;!pq.isEmpty();)
-            nums[i++]=pq.poll();
+            nums[++i]=pq.poll();
         
         return nums;
     }
