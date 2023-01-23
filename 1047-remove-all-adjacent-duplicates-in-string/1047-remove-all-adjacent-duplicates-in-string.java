@@ -14,6 +14,6 @@ class Solution {
                 }
         
         }
-        return stack.toString().replaceAll("(\\[|\\]|\\,|\\s+)", "");
+        return stack.isEmpty()? "" : stack.toString().replaceAll("(\\[|\\]|\\,|\\s+)", "");
     }
 }
