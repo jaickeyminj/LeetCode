@@ -27,6 +27,7 @@ class Solution {
             if (grid[r][c] < 0) {
                 r-=1;
                 cnt += n - c; // there are n - c negative numbers in current row.
+                // System.out.println(cnt);
             }else {
                 c+=1;
             }
