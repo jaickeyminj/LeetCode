@@ -28,45 +28,64 @@
 // }
 class Solution {
     public long totalCost(int[] costs, int k, int candidates) {
-        long cost = 0;
-		//sort based on value , if value is equal then index
-        PriorityQueue<int[]> queue = new PriorityQueue<>((a,b) -> a[0] == b[0]? a[1] - b[1] : a[0] - b[0]);
-        int i = 0;
-        int j = costs.length - 1;
-        while(i < j && candidates > 0) {
-			// 2nd index is -1 for left and 1 for right
-            queue.add(new int[]{costs[i], i, -1});
-            queue.add(new int[]{costs[j], j,  1});
-            i++;
-            j--;
-            candidates--;
+        long res = 0L;
+        int n = costs.length;
+        if(2*candidates > n) return getK(costs, k);
+        PriorityQueue<Integer> left = new PriorityQueue<>();
+        PriorityQueue<Integer> right = new PriorityQueue<>();
+        int l = 0, r = n-1;
+        while(l<candidates){
+            left.add(costs[l]);
+            l++;
         }
-        if(i == j && candidates > 0) {
-			// if array length is odd, we need to handle this
-            queue.add(new int[]{costs[i], i, -1});
-            i++;
+        while(r >=n - candidates){
+            right.add(costs[r]);
+            r--;
         }
-       
-        while(k > 0) {
-            int[] item = queue.remove();
-            cost += item[0];
-			// if we are removing an index from left, we will add from left
-            if(item[2] == -1 && i < j) {
-                 queue.add(new int[]{costs[i], i, -1});
-                i++;
-            }
-			// if we are removing an index from right, we will add from right
-            if(item[2] == 1 && i < j) {
-                queue.add(new int[]{costs[j], j, 1});
-                j--;
-            }
-			// Handling this might not require but I am sharing the exact solution which I used
-            if(i == j) {
-                queue.add(new int[]{costs[i], i, -1});
-                i++;
+        while(k>0){
+            if(!left.isEmpty() && !right.isEmpty()){
+                if(left.peek() > right.peek()){
+                    res += right.poll();
+                    if(l<=r){
+                        right.add(costs[r]);
+                        r--;
+                    }
+                }else if(left.peek() < right.peek()){
+                    res += left.poll();
+                    if(l<=r){
+                        left.add(costs[l]);
+                        l++;
+                    }
+                }else{
+                    res += left.poll();
+                    if(l<=r){
+                        left.add(costs[l]);
+                        l++;
+                    }
+                }
+            }else if(left.isEmpty()){
+                res += right.poll();
+                    if(l<=r){
+                        right.add(costs[r]);
+                        r--;
+                    }
+            }else if(right.isEmpty()){
+                res += left.poll();
+                    if(l<=r){
+                        left.add(costs[l]);
+                        l++;
+                    }
             }
             k--;
         }
-        return cost;
+        return res;
+    }
+    public long getK(int[] costs, int k){
+        long res = 0L;
+        Arrays.sort(costs);
+        for(int i = 0; i<k; i++){
+            res += costs[i];
+        }
+        return res;
     }
 }
