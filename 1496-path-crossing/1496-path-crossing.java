@@ -18,11 +18,11 @@ class Solution {
             else{
                 y -=1;
             }
-            if(set.contains(x+","+y)){
+            if(!set.add(x+","+y)){
                 return true;
             }
-            else
-                set.add(x+","+y);
+            // else
+            //     set.add(x+","+y);
         }
         return false;
     }
