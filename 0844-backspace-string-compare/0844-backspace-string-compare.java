@@ -1,7 +1,7 @@
 class Solution {
     public boolean backspaceCompare(String s, String t) {
-        StringBuilder sb = new StringBuilder();
-        StringBuilder sb2 = new StringBuilder();
+        StringBuilder sb = new StringBuilder(),
+        sb2 = new StringBuilder();
         for(char c: s.toCharArray()){
             if(c!='#') sb.append(c);
             else
