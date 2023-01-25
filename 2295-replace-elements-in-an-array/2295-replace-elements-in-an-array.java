@@ -7,8 +7,7 @@ class Solution {
             i+=1;
         }
 
-        for(int[] x : operations)
-        {
+        for(int[] x : operations){
             int idx = map[x[0]];
             nums[idx]=x[1];
             map[x[1]]=idx;
