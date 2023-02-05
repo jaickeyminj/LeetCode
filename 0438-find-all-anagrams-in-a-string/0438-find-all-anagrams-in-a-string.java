@@ -1,7 +1,7 @@
 class Solution {
     public List<Integer> findAnagrams(String s, String p) {
         List<Integer> list = new ArrayList<Integer>();
-        if(p.length() > s.length()) return  list; // Base Condition
+        if(p.length() > s.length() || s.length()==0 || p.length()==0) return  list; // Base Condition
        
             int N=s.length(); // Array1 of s
             int M=p.length(); // Array2 of p
