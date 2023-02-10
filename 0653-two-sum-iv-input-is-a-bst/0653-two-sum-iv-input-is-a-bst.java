@@ -13,6 +13,7 @@
  *     }
  * }
  */
+/*
 class Solution {
 //     public boolean findTarget(TreeNode root, int k) {
 //         Set<Integer> set = new HashSet<>();
@@ -46,4 +47,28 @@ class Solution {
         list.add(root.val);
         inorder(root.right,list);
     }
+}*/
+
+public class Solution {
+
+public boolean findTarget(TreeNode root, int k) {
+    return dfs(root, root, k);
+}
+
+private boolean dfs(TreeNode node, TreeNode root, int k) {
+    if (node == null) return false;
+    int complement = k - node.val;
+    TreeNode candidate = findNode(root, complement);
+    if (candidate != null && candidate != node) return true;
+    return dfs(node.left, root, k) || dfs(node.right, root, k);
+}
+
+private TreeNode findNode(TreeNode node, int value) {
+    while (node != null) {
+        if (node.val == value) return node;
+        else if (node.val > value) node = node.left;
+        else node = node.right;
+    }
+    return null;
+}
 }
