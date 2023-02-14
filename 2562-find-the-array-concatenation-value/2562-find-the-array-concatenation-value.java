@@ -1,28 +1,23 @@
 class Solution {
     public long findTheArrayConcVal(int[] nums) {
-        if(nums.length == 1) {
-            return nums[0];
+        long ans = 0l;
+        for (int i = 0; i<nums.length-1-i; ++i){
+            ans += concate(nums[i], nums[nums.length-1-i]);
         }
-        
-        int startIndex = 0;
-        int endIndex = nums.length - 1;
-        long sum = 0;
-        while(startIndex < endIndex) {
-            String firstEle = String.valueOf(nums[startIndex]);
-            String lastEle = String.valueOf(nums[endIndex]);
-            String concat = firstEle + lastEle;
-            int concatValue = Integer.parseInt(concat);
-            
-            sum += concatValue;
-            
-            startIndex++;
-            endIndex--;
-            
-            if(startIndex == endIndex) {
-                sum += nums[startIndex];
+        if (nums.length % 2 == 1){
+            return ans + nums[nums.length/2];
+        }
+        return ans;
+    }
+    
+    public long concate(int a, int b){
+        if (b == 0) return ((long) a)*10;
+        for (int i = 1; i<1000000; i*=10){
+            if (b/i == 0){
+                return ((long)a) * i + b;
             }
         }
-        
-        return sum;
+        // impossible
+        return -1;
     }
 }
