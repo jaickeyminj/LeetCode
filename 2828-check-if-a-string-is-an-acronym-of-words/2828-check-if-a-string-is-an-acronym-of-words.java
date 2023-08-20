@@ -1,6 +1,6 @@
 class Solution {
     public boolean isAcronym(List<String> words, String s) {
-        StringBuilder sb = new StringBuilder();
+        StringBuffer sb = new StringBuffer();
         for(String w: words){
             sb.append(w.charAt(0));
         }
