@@ -42,7 +42,6 @@ class Solution{
             if(max>=arr.length-1){
                 return ans;
             }
-            // System.out.println(max+" "+i);
             if(max<=i)
                 return -1;
         }
