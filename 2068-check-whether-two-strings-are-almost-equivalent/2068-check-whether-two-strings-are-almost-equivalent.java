@@ -6,7 +6,7 @@ class Solution {
             map[word1.charAt(i)-'a']+=1;
             map[word2.charAt(i)-'a']-=1;
         }
-        System.out.println(Arrays.toString(map));
+        // System.out.println(Arrays.toString(map));
         for(int i: map){
             if(i>3 || i<-3) return false;
         }
