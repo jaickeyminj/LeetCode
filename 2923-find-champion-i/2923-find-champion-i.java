@@ -1,17 +1,18 @@
 class Solution {
     public int findChampion(int[][] grid) {
-        int row[] = new int[grid.length];
-        
+        // int row[] = new int[grid.length];
+        int row =0;
         int n = grid.length;
         int k=0;
         int max = Integer.MIN_VALUE;
         int ans = 0;
         for(int i[]: grid){
+            row=0;
             for(int j:i){
-                row[k]+=j==0?0:1;
+                row+=j==0?0:1;
             }
-            if(row[k]>max){
-                max = row[k];
+            if(row>max){
+                max = row;
                 ans = k;
             }
             k+=1;
