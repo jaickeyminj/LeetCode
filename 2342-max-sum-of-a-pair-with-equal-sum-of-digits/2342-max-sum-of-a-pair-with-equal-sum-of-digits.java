@@ -17,11 +17,11 @@ class Solution {
         // System.out.println(map);
         PriorityQueue<Map.Entry<Integer,List<Integer>>> pq = new PriorityQueue<>(
         (a,b)-> {
-            if(a.getValue().size()>=2 && b.getValue().size()>=2){
-                // int sum1 = a.getValue().get(0) + a.getValue().get(1);
-                // int sum2 = b.getValue().get(0) + b.getValue().get(1);
-                return b.getValue().size()- a.getValue().size();
-            }
+            // if(a.getValue().size()>=2 && b.getValue().size()>=2){
+            //     // int sum1 = a.getValue().get(0) + a.getValue().get(1);
+            //     // int sum2 = b.getValue().get(0) + b.getValue().get(1);
+            //     return b.getValue().size()- a.getValue().size();
+            // }
             return b.getValue().size() - a.getValue().size();
         });
         
