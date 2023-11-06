@@ -34,9 +34,9 @@ class Solution {
             else if(even.size()==0){
                 res = res * 10 + odd.poll();
             }
-            System.out.print(res);
+            // System.out.print(res);
         }
-        System.out.println();
+        // System.out.println();
         return res;
     }
 }
