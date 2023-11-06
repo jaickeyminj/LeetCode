@@ -4,8 +4,10 @@ class Solution {
         List<String> al;
         PriorityQueue<String> pq= addProducts(products);
         
-        for(int i=0;i<searchWord.length();i+=1){
-            String word = searchWord.substring(0,i+1);
+        String word="";
+        for(char c: searchWord.toCharArray()){
+             // = searchWord.substring(0,i+1);
+            word+=c;
             // if(word.length()==0) continue;
             al = new ArrayList<>();
             // System.out.println(word);
