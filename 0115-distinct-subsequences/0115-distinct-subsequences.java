@@ -1,5 +1,5 @@
 class Solution {
-    public int numDistinct(String S, String T) {
+    /*public int numDistinct(String S, String T) {
         int[][] table = new int[S.length() + 1][T.length() + 1];
  
         for (int i = 0; i < S.length(); i++)
@@ -15,6 +15,21 @@ class Solution {
             }
         }
 	    return table[S.length()][T.length()];
+    }*/
+    public int numDistinct(String S, String T) {
+        int sl = S.length();
+        int tl = T.length();
+
+        int[] dp = new int[tl+1];
+        dp[0] = 1;
+
+        for(int s=1; s<=sl; s++)
+            for(int t=tl; t>=1; t--){
+                if(S.charAt(s-1)==T.charAt(t-1))
+                    dp[t] += dp[t-1];
+            }
+
+        return dp[tl];
     }
     
     /*private int countSubsequences(String a){
