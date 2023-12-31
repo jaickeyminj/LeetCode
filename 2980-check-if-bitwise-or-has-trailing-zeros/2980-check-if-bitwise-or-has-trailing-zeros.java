@@ -1,0 +1,8 @@
+class Solution {
+    public boolean hasTrailingZeros(int[] nums) {
+        int even = 0;
+        for(int n: nums) 
+            even += ((n%2 == 1)?0:1);
+        return (even >= 2);   
+    }
+}
