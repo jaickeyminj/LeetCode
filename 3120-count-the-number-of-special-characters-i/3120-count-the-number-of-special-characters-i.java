@@ -2,7 +2,7 @@ class Solution {
     public int numberOfSpecialChars(String word) {
         int map1[] = new int[26];
         int map2[] = new int[26];
-        
+        if(word.length()<2) return 0;
         for(char c: word.toCharArray()){
             if(Character.isLowerCase(c)){
                 map1[c-'a']+=1;
