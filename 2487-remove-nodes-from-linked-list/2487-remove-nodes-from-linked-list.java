@@ -21,6 +21,9 @@ class Solution {
             }
         }
         return reverse(tail);
+        // if (head == null) return null;
+        // head.next = removeNodes(head.next);
+        // return head.next != null && head.val < head.next.val ? head.next : head;
     }
     private ListNode reverse(ListNode n) {
         ListNode tail = null;
