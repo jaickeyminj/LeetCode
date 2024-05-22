@@ -5,7 +5,7 @@ class Solution {
         return result;
     }
 
-    void dfs(int start, List<List<String>> result, List<String> currentList, String s) {
+    private void dfs(int start, List<List<String>> result, List<String> currentList, String s) {
         if (start >= s.length()) result.add(new ArrayList<String>(currentList));
         for (int end = start; end < s.length(); end++) {
             if (isPalindrome(s, start, end)) {
@@ -18,7 +18,7 @@ class Solution {
         }
     }
 
-    boolean isPalindrome(String s, int low, int high) {
+    private boolean isPalindrome(String s, int low, int high) {
         while (low < high) {
             if (s.charAt(low++) != s.charAt(high--)) return false;
         }
