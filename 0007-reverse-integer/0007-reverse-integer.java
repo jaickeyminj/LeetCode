@@ -1,17 +1,20 @@
 class Solution {
     public int reverse(int x) {
-        long res=0;
-        int i=0;
-        if(x<0){
-            x*=-1;
-            i=-1;
-        }
+        long rev = 0;
+        if(x==0)
+            return 0;
+        int xx=x;
+        if(x<0) x*=-1;
         while(x>0){
-            res = res*10 + x%10;
-            if( res > Integer.MAX_VALUE || res < Integer.MIN_VALUE)
+            rev = rev*10 + x%10;
+            if(rev>Integer.MAX_VALUE || rev< Integer.MIN_VALUE){
+                //System.out.println(rev);
                 return 0;
-            x= x/10;
+            }
+                //return 0;
+            x/=10;
         }
-        return i==0?(int)res:(int)res*-1;
+        
+        return xx<0?(int)rev*-1:(int)rev;
     }
 }
