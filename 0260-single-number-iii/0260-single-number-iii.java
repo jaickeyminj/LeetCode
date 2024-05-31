@@ -8,7 +8,7 @@ class Solution {
         int b =0;
         int bit =0;
         while(x!=0){
-            if((x&(1))!=0){
+            if((x&1)!=0){
                 break;
                 // break;
             }
