@@ -1,37 +1,22 @@
-class Solution {
-    class Project implements Comparable<Project> {
-        int capital, profit;
-
-        public Project(int capital, int profit) {
-            this.capital = capital;
-            this.profit = profit;
+public class Solution {
+    public int findMaximizedCapital(int k, int W, int[] Profits, int[] Capital) {
+        PriorityQueue<int[]> pqCap = new PriorityQueue<>((a, b) -> (a[0] - b[0]));
+        PriorityQueue<int[]> pqPro = new PriorityQueue<>((a, b) -> (b[1] - a[1]));
+        
+        for (int i = 0; i < Profits.length; i++) {
+            pqCap.add(new int[] {Capital[i], Profits[i]});
         }
-
-        public int compareTo(Project project) {
-            return capital - project.capital;
-        }
-    }
-
-    public int findMaximizedCapital(int k, int w, int[] profits, int[] capital) {
-        int n = profits.length;
-        Project[] projects = new Project[n];
-        for (int i = 0; i < n; i++) {
-            projects[i] = new Project(capital[i], profits[i]);
-        }
-        Arrays.sort(projects);
-        // PriorityQueue is a min heap, but we need a max heap, so we use
-        // Collections.reverseOrder()
-        PriorityQueue<Integer> q = new PriorityQueue<Integer>(n, Collections.reverseOrder());
-        int ptr = 0;
+        
         for (int i = 0; i < k; i++) {
-            while (ptr < n && projects[ptr].capital <= w) {
-                q.add(projects[ptr++].profit);
+            while (!pqCap.isEmpty() && pqCap.peek()[0] <= W) {
+                pqPro.add(pqCap.poll());
             }
-            if (q.isEmpty()) {
-                break;
-            }
-            w += q.poll();
+            
+            if (pqPro.isEmpty()) break;
+            
+            W += pqPro.poll()[1];
         }
-        return w;
+        
+        return W;
     }
 }
